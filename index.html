@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro al Torneo de VideoJuegos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+ 
+    <div class="container">
+        <h1>Registro al Torneo de Videojuegos</h1>
+        <p style="text-align: center; margin-bottom: 30px;">Inscribite para competir y demostrar tus habilidades</p>
+    
+        <form id="registroTorneoForm">
+          <!-- Participante -->
+          <div class="form-section">
+            <h2>Información del Participante</h2>
+    
+            <div class="form-group">
+              <label for="nombreJugador" class="required-label">Nombre del Jugador</label>
+              <input type="text" id="nombreJugador" name="nombreJugador" placeholder="Tu nombre gamer" required maxlength="50">
+              <div class="error-message" id="nombreJugador-error">Este campo es obligatorio.</div>
+            </div>
+    
+            <div class="form-group">
+              <label for="edad" class="required-label">Edad</label>
+              <input type="number" id="edad" name="edad" placeholder="Tu edad" min="10" max="99" required>
+              <div class="error-message" id="edad-error">Edad entre 10 y 99 años.</div>
+            </div>
+    
+            <div class="form-group">
+              <label for="juego" class="required-label">Juego a Competir</label>
+              <select id="juego" name="juego" required>
+                <option value="">Seleccione un juego</option>
+                <option value="fortnite">Fortnite</option>
+                <option value="valorant">Valorant</option>
+                <option value="lol">League of Legends</option>
+                <option value="fifa">FIFA</option>
+                <option value="otros">Otros</option>
+              </select>
+              <div class="error-message" id="juego-error">Debe seleccionar un juego.</div>
+            </div>
+    
+            <div class="form-group">
+              <label for="equipo">Nombre del Equipo (si aplica)</label>
+              <input type="text" id="equipo" name="equipo" placeholder="Nombre del equipo o dejar vacío">
+            </div>
+    
+            <div class="form-group">
+              <label for="plataforma" class="required-label">Plataforma</label>
+              <select id="plataforma" name="plataforma" required>
+                <option value="">Seleccione una plataforma</option>
+                <option value="pc">PC</option>
+                <option value="ps5">PlayStation</option>
+                <option value="xbox">Xbox</option>
+                <option value="switch">Nintendo Switch</option>
+              </select>
+              <div class="error-message" id="plataforma-error">Debe seleccionar una plataforma.</div>
+            </div>
+    
+            <div class="form-group">
+                <label for="fotoPerfil" class="required-label">Foto del Juego o Perfil Gamer</label>
+                
+                <label for="fotoPerfil" class="file-upload-label">
+                  <i class="fas fa-upload"></i> Subir imagen (JPG/PNG)
+                </label>
+                
+                <input type="file" id="fotoPerfil" name="fotoPerfil" accept=".jpg,.jpeg,.png" required onchange="mostrarVistaPrevia(event)">
+                
+                <img id="fotoPreview" class="profile-preview" alt="Vista previa" style="display:none;">
+                
+                <div class="error-message" id="fotoPerfil-error">Debe subir una imagen válida.</div>
+              </div>
+              
+    <!-- Términos -->
+<div class="form-section">
+    <h2>Términos del Torneo</h2>
+    
+    <div class="form-group checkbox-group">
+      <label for="aceptoReglas">
+        <input type="checkbox" id="aceptoReglas" name="aceptoReglas" required>
+        <span class="required-label">Acepto las reglas del torneo y el uso de mi imagen</span>
+      </label>
+      <div class="error-message" id="aceptoReglas-error">Debe aceptar las reglas.</div>
+    </div>
+  </div>
+  
+    
+          <!-- Botones -->
+          <div class="buttons-container">
+            <button type="reset" id="resetButton">
+              <i class="fas fa-trash"></i> Borrar Formulario
+            </button>
+            <button type="submit" id="submitButton">
+              <i class="fas fa-gamepad"></i> Unirme al Torneo
+            </button>
+          </div>
+        </form>
+      </div>
+    
+      <!-- Toast -->
+      <div class="toast" id="toast">Formulario enviado con éxito 🎮</div>
+
+
+
+      <div id="contadorEnviosContainer">
+        <span>Formularios enviados: </span>
+        <strong id="contadorEnvios">0</strong>
+      </div>
+      
+      <script src="index.js"></script>
+      
+</body>
+</html>

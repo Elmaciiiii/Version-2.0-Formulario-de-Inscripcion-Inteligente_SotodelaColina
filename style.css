@@ -1,0 +1,380 @@
+/* Estilos generales del body para la apariencia base de la página */
+body {
+  background: radial-gradient(circle at top left, #0f0c29, #302b63, #24243e);
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Estilos del contenedor principal que centra y da formato al formulario */
+.container {
+  max-width: 650px;
+  margin: 60px auto;
+  background: rgba(0, 0, 0, 0.75);
+  border: 2px solid #00ffe7;
+  border-radius: 20px;
+  padding: 40px 35px;
+  box-shadow: 0 0 30px #00ffe7;
+}
+
+/* Estilos del título principal del formulario */
+.container h1 {
+  text-align: center;
+  color: #00ffe7;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Estilos del párrafo descriptivo debajo del título */
+.container p {
+  text-align: center;
+  font-size: 17px;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+/* Estilos para las secciones que agrupan los campos del formulario */
+.form-section {
+  margin-bottom: 35px;
+}
+
+/* Estilos generales para las etiquetas de los campos */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #00d1ff;
+  font-size: 15px;
+}
+
+/* Estilos comunes para los campos de entrada de texto, número, archivo y los selectores */
+input[type="text"],
+input[type="number"],
+input[type="file"],
+select {
+  width: 100%;
+  height: 48px;
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 2px solid #00ffe7;
+  border-radius: 10px;
+  background-color: #1a1a2e;
+  color: #fff;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+/* Estilos específicos para el input de tipo archivo */
+input[type="file"] {
+  padding: 8px 12px;
+}
+
+/* Estilos para el checkbox de aceptación de términos */
+input[type="checkbox"] {
+  transform: scale(1.3);
+  accent-color: #00ffe7;
+  margin-right: 8px;
+  vertical-align: middle;
+  margin-bottom: 12px;
+}
+
+/* Estilos para la vista previa de la imagen cargada */
+.profile-preview {
+  display: block;
+  margin-top: 12px;
+  max-width: 110px;
+  border-radius: 12px;
+  border: 1px solid #00ffe7;
+}
+
+/* Estilos generales para los íconos de validación (éxito y error) */
+.success-icon, .error-icon {
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.success-icon {
+  color: lime;
+  display: none;
+}
+
+.error-icon {
+  color: red;
+  display: none;
+}
+
+/* Estilos para los mensajes que muestran los errores de validación */
+.error-message {
+  color: #ff4b5c;
+  font-size: 13px;
+  margin-top: 4px;
+  margin-bottom: 14px;
+  display: none;
+}
+
+/* Estilos para el contenedor que agrupa los botones de acción */
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+/* Estilos generales para los botones del formulario */
+button {
+  background-color: transparent;
+  color: #00ffe7;
+  border: 2px solid #00ffe7;
+  border-radius: 10px;
+  padding: 12px 26px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Estilos para el estado hover de los botones */
+button:hover {
+  background-color: #00ffe7;
+  color: #000;
+  box-shadow: 0 0 12px #00ffe7;
+}
+
+/* Estilos para el estado deshabilitado de los botones */
+button:disabled {
+  border-color: #555;
+  color: #555;
+  cursor: not-allowed;
+}
+
+/* Estilos para el contenedor del contador de formularios enviados */
+#contadorEnviosContainer {
+  margin-top: 40px;
+  font-size: 18px;
+  color: #00ffe7;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para el valor numérico del contador de envíos */
+#contadorEnvios {
+  font-weight: bold;
+  font-size: 22px;
+  color: #ff00ff;
+}
+
+/* Estilos para el mensaje emergente (toast) de éxito */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00ffe7;
+  color: #000;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 0 20px #00ffe7;
+  display: none;
+  z-index: 9999;
+}
+
+/* Estilos para la etiqueta personalizada del input de tipo archivo */
+.file-upload-label {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #00ffe7;
+  color: #000;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 8px #00ffe7;
+  margin-bottom: 10px;
+}
+
+.file-upload-label:hover {
+  background-color: #00e0cc;
+  box-shadow: 0 0 12px #00ffe7;
+}
+
+/* Oculta el input de tipo archivo nativo */
+input[type="file"] {
+  display: none;
+}
+
+/* Estilos para la vista previa de la imagen (más grande) */
+.profile-preview {
+  display: block;
+  margin-top: 10px;
+  max-width: 200px;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #00ffe7;
+  box-shadow: 0 0 8px #00ffe7;
+}
+
+/* Estilos para el contenedor de los checkboxes de términos */
+.checkbox-group {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Estilos para la etiqueta de cada checkbox de términos */
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Estilos para el input de tipo checkbox dentro del grupo de términos */
+.checkbox-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #00ffe7; /* Color del checkbox */
+}
+
+/* Estilos para la etiqueta de "requerido" dentro del grupo de checkboxes */
+.checkbox-group .required-label {
+  font-weight: 500;
+}
+
+/* Estilos para el mensaje de error dentro del grupo de checkboxes */
+.checkbox-group .error-message {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-left: 30px;
+}
+
+/* Estilos Responsive para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  /* Ajustes generales del contenedor */
+  .container {
+      margin: 30px;
+      padding: 20px;
+      border-radius: 15px;
+  }
+
+  /* Ajustes del título */
+  .container h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+  }
+
+  /* Ajustes del párrafo descriptivo */
+  .container p {
+      font-size: 16px;
+      margin-bottom: 20px;
+  }
+
+  /* Ajustes del margen entre secciones */
+  .form-section {
+      margin-bottom: 25px;
+  }
+
+  /* Ajustes de las etiquetas */
+  label {
+      font-size: 14px;
+      margin-bottom: 8px;
+  }
+
+  /* Ajustes de los campos de entrada y selectores */
+  input[type="text"],
+  input[type="number"],
+  input[type="file"],
+  select {
+      height: 40px;
+      padding: 8px 12px;
+      font-size: 14px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+  }
+
+  /* Ajustes específicos del input de archivo */
+  input[type="file"] {
+      padding: 6px 10px;
+  }
+
+  /* Ajustes de la etiqueta del checkbox */
+  .checkbox-group label {
+      font-size: 15px;
+  }
+
+  /* Ajustes del contenedor de botones (disposición vertical) */
+  .buttons-container {
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 30px;
+  }
+
+  /* Ajustes de los botones */
+  button {
+      padding: 10px 20px;
+      font-size: 15px;
+      border-radius: 8px;
+  }
+
+  /* Ajustes del contenedor del contador */
+  #contadorEnviosContainer {
+      margin-top: 30px;
+      font-size: 16px;
+  }
+
+  /* Ajustes del valor del contador */
+  #contadorEnvios {
+      font-size: 20px;
+  }
+
+  /* Ajustes del mensaje emergente (toast) */
+  .toast {
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-size: 14px;
+  }
+
+  /* Ajustes de la etiqueta de carga de archivos */
+  .file-upload-label {
+      padding: 10px 16px;
+      font-size: 14px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+  }
+
+  /* Ajustes de la vista previa de la imagen */
+  .profile-preview {
+      max-width: 150px;
+      border-radius: 8px;
+  }
+}
+
+/* Estilos Responsive para pantallas medianas (tabletas) */
+@media (min-width: 769px) and (max-width: 992px) {
+  /* Ajustes generales del contenedor */
+  .container {
+      margin: 40px;
+      padding: 30px;
+  }
+
+  /* Ajustes del título */
+  .container h1 {
+      font-size: 32px;
+  }
+
+  /* Ajustes del párrafo descriptivo */
+  .container p {
+      font-size: 16px;
+  }
+
+  /* Ajustes del contenedor de botones */
+  .buttons-container {
+      margin-top: 35px;
+  }
+}
